@@ -22,5 +22,5 @@ from feed import urls as feed_urls
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('home/', include('feed.urls', namespace='feed')),
+    path('', include('feed.urls', namespace='feed')),
 ]
