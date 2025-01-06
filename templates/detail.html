@@ -3,5 +3,8 @@
 {% block title %}Detail{% endblock %}
 
 {% block body %}
-    This is where my image will go.
+    <h3>Text</h3>
+    {{ object.text }}
+    <h3>Image</h3>
+    <img src="{{ object.image.url }}" width="100%" height="auto">
 {% endblock %}
