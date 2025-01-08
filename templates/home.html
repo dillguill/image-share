@@ -5,11 +5,13 @@
 
 {% block body %}
     {% for post in posts %}
-        {{ post.text }} <br>
-        {% load sorl_thumbnail %}
-        {% thumbnail post.image "200x200" crop="center" as im %}
-            <img src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}">
-        {% endthumbnail %}
+        <a href="{% url 'feed:detail' post.id %}" style="display: inline-block;">
+            {{ post.text }} <br>
+            {% load sorl_thumbnail %}
+            {% thumbnail post.image "200x200" crop="center" as im %}
+                <img src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}">
+            {% endthumbnail %}
+        </a>    
         <hr>
     {% endfor %}
 {% endblock %}
