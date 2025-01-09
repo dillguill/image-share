@@ -3,9 +3,11 @@
 {% block title %}Detail{% endblock %}
 
 {% block body %}
-    <a href="{% url 'feed:index' %}">&lAarr; Go Back</a>
-    <h3>Text</h3>
-    {{ object.text }}
-    <h3>Image</h3>
-    <img src="{{ object.image.url }}" width="100%" height="auto">
+    <div class="row">
+        <div class="col-sm-10 offset-sm-1 py-5">
+            {{ object.text }}
+            <hr>
+            <img src="{{ object.image.url }}" class="img-fluid rounded">
+        </div>
+    </div>
 {% endblock %}
